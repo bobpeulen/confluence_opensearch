@@ -34,7 +34,7 @@
 
 # OCI Functions
 
-- log in Docker
+- Create repo/project and log in Docker
   ```
   docker login -u '[namespace]/OracleIdentityCloudService/bob.peulen@oracle.com' iad.ocir.io
   password = Auth token
@@ -45,13 +45,14 @@
   fn init --runtime python confluencex
   cd confluencex
   ```
+- Change the func.py and requirements.txt
 
-  - Invoke
-    ```
-    fn invoke app_bp confluencex
-    ```
+- Test function. Deploy and invoke function. Default values should be printed (in logs) and returned.
+  ```
+  fn -v deploy --app app_bp
+  fn invoke app_bp confluencex
+  ```
 
-- Change func.py
 
 
 
