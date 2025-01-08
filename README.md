@@ -11,6 +11,25 @@
    Use: https://github.com/bobpeulen/oci_opensearch/blob/main/oci_opensearch_rag_auto.ipynb
 4. Create OCI Functions deployment
 
+# API Gateway
+- Create an API Gateway and deployment with PUT/POST. In this example, we use "confluence" and "updatepage" as paths.
+- This example used no authentication, but you might add. 
+
+# Create Confluence automation rule
+- Add the API Gateway deployment full path in rule
+- Create two smart variables and add both to the custom body
+
+   ```
+  {
+   "page_id":"{{pageidsmart}}",
+   "page_url":"{{pageurlsmart}}"
+   }
+   ```
+
+![image](https://github.com/user-attachments/assets/aa232819-0666-4445-b7ef-e8c9f8b5f2b2)
+
+
+
 # OCI Functions
 
 - log in Docker
@@ -34,4 +53,4 @@
 
 
 
-![image](https://github.com/user-attachments/assets/aa232819-0666-4445-b7ef-e8c9f8b5f2b2)
+
