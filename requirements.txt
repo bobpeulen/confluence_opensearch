@@ -1,3 +1,4 @@
+fdk>=0.1.86
 atlassian-python-api
 beautifulsoup4
 tiktoken
