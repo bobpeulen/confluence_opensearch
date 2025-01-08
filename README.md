@@ -17,7 +17,6 @@
 
 # Create Confluence automation rule
 - Add the API Gateway deployment full path in rule
-- Create two smart variables and add both to the custom body
 
    ```
   {
