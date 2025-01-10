@@ -64,10 +64,7 @@ def chunk_text(output_text, max_tokens):
 
 
 def parse_page(confluence_client, page_id):
-    
-    #################################################################### Get the body of the page
-    ####################################################################
-    
+        
     #get the full page
     result_one_page = confluence_client.get_page_by_id(page_id, expand="body.storage")
 
