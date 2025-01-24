@@ -1,19 +1,29 @@
+
 import io
 import json
 from fdk import response
-
-#custom
 from atlassian import Confluence
 from bs4 import BeautifulSoup
 import datetime
 from datetime import datetime
 import tiktoken
-from transformers import BertTokenizer, BertModel
-import torch
-from opensearchpy import OpenSearch, RequestsHttpConnection
+from langchain.vectorstores import OpenSearchVectorSearch
+from langchain_huggingface import HuggingFaceEmbeddings
+import oci
+import ads
+from tqdm import tqdm
 
-from config import confluence_space_id, full_confluence_url, username_confluence, atlassian_api_token, host, username, password
-from helpers import create_confluence_client, create_opensearch_client, chunk_text, parse_page
+#load configuration
+from config import confluence_space_id, full_confluence_url, username_confluence, atlassian_api_token, host, username, password, index_name
+
+#Load all customer functions
+from helpers import create_embedding_model
+from helpers import ingest_documents_with_embeddings
+from helpers import chunk_text
+from helpers import parse_page
+from helpers import create_confluence_client
+from helpers import create_opensearch_client
+
 
 def handler(ctx, data: io.BytesIO=None):
     
@@ -37,10 +47,11 @@ def handler(ctx, data: io.BytesIO=None):
         # parse the page and create chunks
         chunks = parse_page(confluence_client, page_id)
         
-        # push chunks to OCI OpenSearch.
+        #parse chunks of text into embeddings
+        embedding_model = create_embedding_model()
         
-        
-        
+        # convert chunks into embeddings and push to OCI OpenSearch.
+        ingest_documents_with_embeddings(document_chunks=chunks, index_name=index_name, oci_opensearch_client=oci_opensearch_client, host=host, username=username, password=password, embedding_model=embedding_model, batch_size=5)
         
     except (Exception, ValueError) as ex:
         print(str(ex), flush=True)
