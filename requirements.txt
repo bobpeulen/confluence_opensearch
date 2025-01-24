@@ -1,7 +1,10 @@
 fdk>=0.1.86
+oci
 atlassian-python-api
 beautifulsoup4
 tiktoken
 opensearch-py
 transformers
 torch
+langchain
+langchain-huggingface
