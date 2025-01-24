@@ -51,7 +51,7 @@ def handler(ctx, data: io.BytesIO=None):
         embedding_model = create_embedding_model()
         
         # convert chunks into embeddings and push to OCI OpenSearch.
-        ingest_documents_with_embeddings(document_chunks=chunks, index_name=index_name, oci_opensearch_client=oci_opensearch_client, host=host, username=username, password=password, embedding_model=embedding_model, batch_size=5)
+        ingest_documents_with_embeddings(chunks=chunks, index_name=index_name, oci_opensearch_client=oci_opensearch_client, host=host, username=username, password=password, embedding_model=embedding_model, batch_size=5)
         
     except (Exception, ValueError) as ex:
         print(str(ex), flush=True)
