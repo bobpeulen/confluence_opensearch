@@ -13,6 +13,6 @@ atlassian_api_token = "ATATT3mlIdkl8A-SOGfBrBQGLE3pE81Kh5kC5fnOkXCVQDaGkYBA2N9Mu
 #### Set OCI OpenSearch parameters. Full API Endpoint
 host = "https://amaaaaaaeicj2tiapempxdffke77vfvuy4e3xtcnoscpb5qitk2sidpjeyxa.opensearch.us-ashburn-1.oci.oraclecloud.com:9200"
 username = "adminx"
-password = ""
+password = "x"
 
 index_name = "confluence_embeddings_v2"
