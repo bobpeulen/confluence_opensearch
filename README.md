@@ -34,8 +34,8 @@
 # 3. Create OCI OpenSearch Cluster
 - Create an OCI OpenSearch cluster, version 2.15, in public subnet, in same VCN as API Gateway.
 - Create a OCI Data Science notebook in same VCN, private subnet + NAT gateway
-- Follow these steps: https://github.com/bobpeulen/oci_opensearch/blob/main/oci_opensearch_rag_auto.ipynb
-- 
+- Follow these steps: https://github.com/bobpeulen/oci_opensearch/blob/main/oci_opensearch_rag_auto.ipynb. This notebook will help in deploying in RAG 
+  
 # 4. OCI Data Science
 
 # 5. OCI Functions
