@@ -28,7 +28,7 @@
 ![image](https://github.com/user-attachments/assets/aa232819-0666-4445-b7ef-e8c9f8b5f2b2)
 
 # OCI OpenSearch
-- Create an OCI OpenSearch cluster
+- Create an OCI OpenSearch cluster, version 2.15, in private subnet
 - Create a OCI Data Science notebook in same VCN, private subnet + NAT gateway
 - Follow these steps: https://github.com/bobpeulen/oci_opensearch/blob/main/oci_opensearch_rag_auto.ipynb
 
