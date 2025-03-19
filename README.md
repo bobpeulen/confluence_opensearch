@@ -7,15 +7,18 @@
 
 1. Create an API Gateway and deployment
 2. Create Automation rule in Confluence using the API Gateway endpoint
-3. Create OCI OpenSearch Clusters. Set up embedding model, conversation history, GenAI connection
+3. Create OCI OpenSearch Clusters. 
    Use: https://github.com/bobpeulen/oci_opensearch/blob/main/oci_opensearch_rag_auto.ipynb
-4. Create OCI Functions deployment
+4.Create OCI Data Science ntebook and model deployment
+5. Create OCI Functions deployment
 
-# API Gateway
+
+
+# 1. Create an API Gateway and deployment
 - Create an API Gateway and deployment with PUT/POST. In this example, we use "confluence" and "updatepage" as paths.
-- This example used no authentication, but you might add. 
-
-# Create Confluence automation rule
+- This example used no authentication, but you might add.
+- 
+# 2. Create Automation rule in Confluence using the API Gateway endpoint
 - Add the API Gateway deployment full path in rule
 
    ```
@@ -27,12 +30,15 @@
 
 ![image](https://github.com/user-attachments/assets/aa232819-0666-4445-b7ef-e8c9f8b5f2b2)
 
-# OCI OpenSearch
-- Create an OCI OpenSearch cluster, version 2.15, in private subnet
+
+# 3. Create OCI OpenSearch Cluster
+- Create an OCI OpenSearch cluster, version 2.15, in public subnet, in same VCN as API Gateway.
 - Create a OCI Data Science notebook in same VCN, private subnet + NAT gateway
 - Follow these steps: https://github.com/bobpeulen/oci_opensearch/blob/main/oci_opensearch_rag_auto.ipynb
+- 
+# 4. OCI Data Science
 
-# OCI Functions
+# 5. OCI Functions
 
 - Create repo/project and log in Docker
   ```
