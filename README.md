@@ -10,7 +10,7 @@
 3. Create OCI OpenSearch Clusters. 
    Use: https://github.com/bobpeulen/oci_opensearch/blob/main/oci_opensearch_rag_auto.ipynb
 4.Create OCI Data Science ntebook and model deployment
-5. Create OCI Functions deployment
+5. Create OCI Functions deployments
 
 
 
